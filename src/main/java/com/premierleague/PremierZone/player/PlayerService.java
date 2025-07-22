@@ -3,6 +3,7 @@ package com.premierleague.PremierZone.player;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Locale;
@@ -70,6 +71,7 @@ public class PlayerService {
         return null;
     }
 
+    @Transactional
     public void deletePlayer(String playerName){
         playerRepository.deleteByName(playerName);
     }
